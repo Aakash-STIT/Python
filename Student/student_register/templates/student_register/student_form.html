@@ -1,0 +1,44 @@
+{% extends "student_register/base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="jumbotron">
+    <h1 class="display-4 text-center font-weight-bold" style="font-family: Copperplate Gothic Light;">Student
+        Registration/Update Form</h1>
+    <a class="btn btn-primary" href="{% url 'studnet_list' %}" role="button">
+        Students List </a>
+    <hr class="my-4">
+    <form action="" method="post" autocomplete="off">
+        {% csrf_token %}
+        <div class="row">
+            <div class="col-md-6">
+                {{form.firstName|as_crispy_field}}
+            </div>
+            <div class="col-md-6">
+                {{form.lastName|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                {{form.age|as_crispy_field}}
+            </div>
+            <div class="col-md-7">
+                {{form.qualification|as_crispy_field}}
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                {{form.email|as_crispy_field}}
+            </div>
+            <div class="col-md-6">
+                {{form.password|as_crispy_field}}
+            </div>
+        </div>
+        {{form.university|as_crispy_field}}
+        <br>
+        <button type="submit" class="btn btn-success col-md-3 float-right"><i class="fas fa-database"></i>
+            Save/Update Student</button>
+    </form>
+</div>
+
+{%endblock content %}
