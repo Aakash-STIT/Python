@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Customer Registeration</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+        .note {
+            text-align: center;
+            height: 80px;
+            background: -webkit-linear-gradient(left, #0072ff, #8811c5);
+            color: #fff;
+            font-weight: bold;
+            line-height: 80px;
+        }
+
+        .form-content {
+            padding: 5%;
+            border: 1px solid #ced4da;
+            margin-bottom: 2%;
+        }
+
+        .form-control {
+            border-radius: 1.5rem;
+        }
+
+        .btnSubmit {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 1%;
+            width: 20%;
+            cursor: pointer;
+            background: #0062cc;
+            color: #fff;
+        }
+
+        .btnLogin {
+            border: none;
+            border-radius: 1.5rem;
+            padding: 1%;
+            width: 20%;
+            cursor: pointer;
+            background: #0062cc;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container register-form">
+        <div class="form">
+            <div class="note">
+                <h1>Customer Registeration Form</h1>
+            </div>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="form-content">
+                    <div class="row">
+                        <div class="row col-md-12">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="first_name" class="form-control" placeholder="first name"
+                                    required />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="last_name" class="form-control" placeholder="last name"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="col-md-12 form-group">
+                                <input type="text" name="username" class="form-control" placeholder="username"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="row col-md-12">
+                            <div class="col-md-6 form-group">
+                                <input type="email" name="email" class="form-control" placeholder="email" required />
+                            </div>
+                            <div class="col-md-6 form-group">
+                                <input type="password" name="password" class="form-control" placeholder="password"
+                                    required />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <button type="submit" class="btnSubmit">Submit</button>
+                <a href="/" class="btn btn-info btnLogin" role="button" style="float:right">Back To Login</a>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
